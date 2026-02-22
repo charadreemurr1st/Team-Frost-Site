@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Frost - A Game by Friends</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="Fading Away.mp3" type="audio/mpeg">
+    </audio>
+
+    <header>
+        <h1>TEAM FROST</h1>
+        <p>A Game Made With Determination</p>
+    </header>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="gamedev.html">GAME DEV</a>
+        <a href="team.html">TEAM</a>
+        <a href="game.html" style="display: none;">GAME</a>
+    </nav>
+
+    <div class="container">
+        <div class="content">
+            <div class="section">
+                <h2>WELCOME</h2>
+                <p>Welcome to Team Frost's official website. We're a group of passionate developers creating something special.</p>
+                <p>Click around, explore, and who knows... you might find something interesting.</p>
+            </div>
+
+            <div class="newsletter">
+                <h3>STAY UPDATED</h3>
+                <p>Get notified when we have news to share!</p>
+                <input type="email" placeholder="your email here" id="newsletter-email">
+                <button onclick="subscribeNewsletter()">SUBSCRIBE</button>
+                <p id="newsletter-message" style="margin-top: 10px; min-height: 20px;"></p>
+            </div>
+
+            <div class="section">
+                <h2>CREDITS</h2>
+                <div class="music-credit">
+                    <p>Background Music: <a href="https://www.youtube.com/watch?v=OL0ptC703n0&list=PL8UtRQOr0AnLIcBBoXnx76-yfXH8eX1qB&index=35" target="_blank">Fading Away</a> (Deltarune Fan Song)</p>
+                    <p style="margin-top: 10px; font-size: 0.75rem;">Original by NyxTheShield feat. #Solaria</p>
+                    <p style="margin-top: 10px; font-size: 0.75rem;">Website Design Inspired by <a href="https://deltarune.com" target="_blank">DELTARUNE</a> by Toby Fox</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Team Frost © 2026</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Auto-play background music
+        window.addEventListener('load', function() {
+            const music = document.getElementById('bg-music');
+            music.volume = 0.3;
+            music.play().catch(err => {
+                console.log('Audio autoplay prevented by browser. User interaction required.');
+                document.addEventListener('click', function playAudio() {
+                    music.play().catch(e => console.log('Error:', e));
+                    document.removeEventListener('click', playAudio);
+                }, { once: true });
+            });
+        });
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            const message = document.getElementById('newsletter-message');
+            
+            if (!email) {
+                message.textContent = 'Please enter an email address.';
+                message.style.color = '#ff0000';
+                return;
+            }
+
+            if (!email.includes('@')) {
+                message.textContent = 'Please enter a valid email address.';
+                message.style.color = '#ff0000';
+                return;
+            }
+
+            message.textContent = 'Subscription feature coming soon! We\'ll notify you then.';
+            message.style.color = '#00ff00';
+            
+            setTimeout(() => {
+                message.textContent = '';
+                document.getElementById('newsletter-email').value = '';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
