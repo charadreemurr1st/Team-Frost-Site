@@ -1,4 +1,16 @@
 @font-face {
+    font-family: 'Wingdings';
+    src: url('../wingdings.otf') format('opentype');
+    font-display: swap;
+}
+
+.wingdings {
+    font-family: 'Wingdings', 'Arial', sans-serif !important;
+    letter-spacing: 0.05em;
+    font-size: 1.2em;
+    user-select: none;
+}
+@font-face {
     font-family: 'Determination Mono';
     src: url('../DeterminationMonoWebRegular-Z5oq.ttf') format('truetype');
 }
