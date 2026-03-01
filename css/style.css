@@ -39,6 +39,185 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Animated Background System */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Starfield Background - stars drift down and twinkle */
+.star {
+    animation: twinkle 2s infinite, starfield-drift 200s linear infinite;
+}
+
+/* Particle Background for GameDev - particles float up */
+.particle {
+    animation: particles-float 150s linear infinite;
+}
+
+/* Wave Background for Team - waves flow */
+body[data-page="team"] div[style*="borderTop"] {
+    animation: wave-flow 120s linear infinite;
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #00D9FF;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.particle {
+    position: absolute;
+    border: 1px solid #00D9FF;
+    opacity: 0.3;
+}
+
+@keyframes starfield-drift {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes particles-float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes wave-flow {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Audio Controls */
+.audio-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #00D9FF;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Determination Sans', sans-serif;
+    border-radius: 4px;
+}
+
+.audio-btn {
+    background: #000000;
+    border: 2px solid #00D9FF;
+    color: #00D9FF;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-family: 'Determination Sans', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.audio-btn:hover {
+    background: #00D9FF;
+    color: #000000;
+}
+
+.audio-btn.active {
+    background: #00D9FF;
+    color: #000000;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.volume-slider {
+    width: 120px;
+    height: 4px;
+    background: #00D9FF;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2px;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #00D9FF;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #00D9FF;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+
+.volume-label {
+    font-size: 0.8rem;
+    color: #00D9FF;
+    min-width: 30px;
+}
+
+.audio-status {
+    font-size: 0.8rem;
+    color: #00D9FF;
 }
 
 a {
@@ -285,5 +464,26 @@ footer {
 
     .section {
         padding: 20px;
+    }
+
+    .audio-controls {
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .volume-control {
+        flex-direction: column;
+    }
+
+    .volume-slider {
+        width: 100px;
+    }
+
+    .audio-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
 }
