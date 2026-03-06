@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team - Team Frost</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/icespell.png">
     <style>
         .team-members-container {
             display: grid;
@@ -54,7 +55,31 @@
 
             <div class="team-members-container" id="team-container">
                 <!-- Team members will be dynamically loaded here -->
-            </div>
+                <div class="team-member">
+                    <img src="assets/Deltanerd.png" alt="Deltanerd Profile Picture" class="team-pfp" />
+                    <h3>Deltanerd</h3>
+                    <div class="role">Developer</div>
+                    <div class="description">Hi! I am a indie-dev in the works! you may or may not know me but, i actually love to write! it's a hobby of mine and maybe someday, along side our works as a team, i can publish at least one book! anyway, have you ever kept a piece of shattered glass? <strong>maybe even from a mirror?</strong>Well, that's just unlucky, why would you take a curse of bad luck wherever you went?</div>
+                </div>
+                <div class="team-member">
+                    <img src="assets/exquisitecat.png" alt="ExquisiteCat Profile Picture" class="team-pfp" />
+                    <h3>ExquisiteCat</h3>
+                    <div class="role">Track Organizer, Game Tester</div>
+                    <div class="description">person who likes music, games and art in general. i make music and other things !!!!!</div>
+                </div>
+                <div class="team-member">
+                    <img src="assets/CD.png" alt="CD Profile Picture" class="team-pfp" />
+                    <h3>CD</h3>
+                    <div class="role">Web Designer, Game Tester</div>
+                    <div class="description">I like Undertale, Deltarune, Umamusume, Music, Demon Slayer, and Pixel Art. I've tried to mod Deltarune before, but I don't have the attention span for that, now I make websites and game.</div>
+                </div>
+                <div class="team-member">
+                    <img src="assets/December.jpg" alt="December Profile Picture" class="team-pfp" />
+                    <h3>December</h3>
+                    <div class="role">Artist, Game Tester</div>
+                    <div class="description">Hello my name is December, I love my friends, cats, games and all sorts of things. I’m truly intrigued by making things and culinary. I really enjoy helping others and I’d always be here for someone to vent or anything in general like calling, texting, etc. I always enjoy meeting new people and I’m almost always available!</div>
+                </div>
+                </div>
         </div>
     </div>
 
@@ -63,54 +88,3 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        // Team member data - you can update these with actual team info
-        const teamMembers = [
-            {
-                name: "Lead Developer",
-                role: "Game Design & Programming",
-                quote: "Code is poetry written for machines that have terrible taste."
-            },
-            {
-                name: "Artist",
-                role: "Visual Design & Animation",
-                quote: "Pixels are just tiny rectangles with dreams."
-            },
-            {
-                name: "Composer",
-                role: "Music & Sound Design",
-                quote: "The game without music is just a very interactive spreadsheet."
-            },
-            {
-                name: "Writer",
-                role: "Narrative & Dialogue",
-                quote: "Every character deserves a voice, even the angry rocks."
-            },
-            {
-                name: "Game Designer",
-                role: "Mechanics & Balance",
-                quote: "Fun is the hardest thing to debug."
-            },
-            {
-                name: "Website Developer",
-                role: "Web Design & Development",
-                quote: "Making games look good on the internet, one pixel at a time."
-            }
-        ];
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('team-container');
-            teamMembers.forEach(member => {
-                const memberDiv = document.createElement('div');
-                memberDiv.className = 'team-member';
-                memberDiv.innerHTML = `
-                    <h3>${member.name}</h3>
-                    <div class="role">${member.role}</div>
-                    <div class="quote">"${member.quote}"</div>
-                `;
-                container.appendChild(memberDiv);
-            });
-        });
-    </script>
-</body>
-</html>
