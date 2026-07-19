@@ -443,6 +443,11 @@ function showCurseErrorPopup() {
 
     popup.querySelectorAll('.error-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
+            if (btn.textContent.trim() === 'ABORT') {
+                window.close();
+                return;
+            }
+
             if (document.body.contains(overlay)) {
                 document.body.removeChild(overlay);
             }
