@@ -499,33 +499,156 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-.newsletter input {
-    padding: 10px;
-    font-size: 1rem;
-    background-color: #000000;
-    color: #00D9FF;
-    border: 2px solid #00D9FF;
-    font-family: 'Determination Sans', sans-serif;
-    width: 100%;
-    max-width: 400px;
-    margin: 10px 0;
+.newsletter p {
+    color: #FFFFFF;
+    line-height: 1.6;
+    margin-bottom: 24px;
 }
 
-.newsletter button {
+.newsletter-link {
+    display: inline-block;
     padding: 12px 30px;
-    font-size: 1rem;
+    border: 2px solid #00D9FF;
+    font-weight: bold;
+}
+
+.newsletter-link:hover {
     background-color: #00D9FF;
     color: #000000;
-    border: 2px solid #00D9FF;
-    cursor: pointer;
-    font-family: 'Determination Sans', sans-serif;
-    font-weight: bold;
-    transition: all 0.2s ease;
 }
 
-.newsletter button:hover {
-    background-color: #000000;
-    color: #00D9FF;
+.newsletter-page-shell {
+    background: #000000;
+    color: #FFFFFF;
+    font-family: 'Determination Sans', sans-serif;
+}
+
+.newsletter-post {
+    width: min(100%, 640px);
+    margin: 0 auto;
+    padding: 110px 24px 80px;
+}
+
+.newsletter-masthead {
+    padding-bottom: 64px;
+    text-align: center;
+}
+
+.newsletter-backlink,
+.newsletter-footer a {
+    color: #FFF200;
+    border: 0;
+    font-family: 'Determination Mono', monospace;
+    font-size: 0.8rem;
+}
+
+.newsletter-backlink:hover,
+.newsletter-footer a:hover {
+    background: transparent;
+    color: #FFF200;
+}
+
+.newsletter-masthead h1 {
+    color: #FFFFFF;
+    font-family: 'Determination Sans', sans-serif;
+    font-size: clamp(2.8rem, 10vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: 0;
+    margin-top: 42px;
+}
+
+.newsletter-subtitle {
+    margin: 28px auto 0;
+    color: #FFFFFF;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.newsletter-post article {
+    padding: 0 20px;
+}
+
+.newsletter-post article > p,
+.newsletter-section p {
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin: 0 0 26px;
+}
+
+.newsletter-lede {
+    color: #FFF200 !important;
+    font-family: 'Determination Mono', monospace;
+    font-size: 0.9rem !important;
+}
+
+.newsletter-section {
+    margin-top: 92px;
+}
+
+.newsletter-section h2 {
+    margin: 0 0 34px;
+    color: #FFF200;
+    font-family: 'Determination Mono', monospace;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    letter-spacing: 0;
+}
+
+.newsletter-section h2::before {
+    content: '[ ';
+    color: #FFF200;
+}
+
+.newsletter-section h2::after {
+    content: ' ]';
+    color: #FFF200;
+}
+
+.newsletter-big-text {
+    margin: 36px 0 0 !important;
+    color: #FFF200 !important;
+    font-family: 'Determination Mono', monospace;
+    font-size: 1.35rem !important;
+    line-height: 1.35 !important;
+}
+
+.newsletter-action {
+    color: #FFF200;
+    border-bottom: 1px solid #FFF200;
+    font-family: 'Determination Mono', monospace;
+    font-size: 0.9em;
+}
+
+.newsletter-action:hover {
+    background: #FFF200;
+    color: #000000;
+}
+
+.newsletter-note {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.newsletter-note .newsletter-signoff {
+    margin-top: 42px;
+    color: #FFFFFF !important;
+    font-family: 'Determination Mono', monospace;
+    line-height: 1.6;
+}
+
+.newsletter-footer {
+    margin-top: 110px;
+    padding-top: 20px;
+    border-top: 1px solid #444444;
+    text-align: center;
+    color: #777777;
+    font-family: 'Determination Mono', monospace;
+    font-size: 0.75rem;
+}
+
+.newsletter-footer p {
+    margin: 0 0 18px;
 }
 
 footer {
@@ -858,5 +981,30 @@ body.team-corrupted .error-btn {
     .audio-btn {
         padding: 6px 12px;
         font-size: 0.8rem;
+    }
+
+    .newsletter-post {
+        padding: 64px 18px 50px;
+    }
+
+    .newsletter-post article {
+        padding: 34px 4px 0;
+    }
+
+    .newsletter-section {
+        margin-top: 70px;
+    }
+
+    .newsletter-section h2 {
+        font-size: 1.15rem;
+    }
+
+    .newsletter-post article > p,
+    .newsletter-section p {
+        font-size: 1.15rem;
+    }
+
+    .newsletter-footer {
+        flex-direction: column;
     }
 }

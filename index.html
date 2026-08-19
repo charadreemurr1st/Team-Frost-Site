@@ -48,11 +48,9 @@
             </div>
 
             <div class="newsletter">
-                <h3>STAY UPDATED</h3>
-                <p>Get notified when we have news to share!</p>
-                <input type="email" placeholder="your email here" id="newsletter-email">
-                <button onclick="subscribeNewsletter()">SUBSCRIBE</button>
-                <p id="newsletter-message" style="margin-top: 10px; min-height: 20px;"></p>
+                <h3>THE FROST LETTER</h3>
+                <p>Little updates from the team, delivered whenever we have something worth saying.</p>
+                <a class="newsletter-link" href="newsletter.html">OPEN NEWSLETTER</a>
             </div>
 
             <div class="section">
@@ -71,31 +69,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        function subscribeNewsletter() {
-            const email = document.getElementById('newsletter-email').value;
-            const message = document.getElementById('newsletter-message');
-            
-            if (!email) {
-                message.textContent = 'Please enter an email address.';
-                message.style.color = '#ff0000';
-                return;
-            }
-
-            if (!email.includes('@')) {
-                message.textContent = 'Please enter a valid email address.';
-                message.style.color = '#ff0000';
-                return;
-            }
-
-            message.textContent = 'Subscription feature coming soon! Not Now, Though.';
-            message.style.color = '#00ff00';
-            
-            setTimeout(() => {
-                message.textContent = '';
-                document.getElementById('newsletter-email').value = '';
-            }, 3000);
-        }
-    </script>
 </body>
 </html>
